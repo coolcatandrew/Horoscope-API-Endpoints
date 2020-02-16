@@ -12,11 +12,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/")
 public class HoroscopeAPIController {
     private FeedParser parser;
 
@@ -38,7 +40,7 @@ public class HoroscopeAPIController {
      * Get all zodiacs
      * @return
      */
-    @GetMapping("/api/zodiac")
+    @GetMapping("zodiac")
     private ResponseEntity<List<Zodiac>> getZodiacs() {
         try{
             return new ResponseEntity<>(zodiacService.getAll(), HttpStatus.OK);
@@ -51,7 +53,7 @@ public class HoroscopeAPIController {
      * Get all of todays horoscopes
      * @return
      */
-    @GetMapping("/api/horoscopes")
+    @GetMapping("horoscopes")
     private List<Horoscope> getHoroscopes() {
         List<Horoscope> horoscopes = horoscopeService.getToday();
         if (horoscopes == null || horoscopes.size() == 0) {
@@ -66,7 +68,7 @@ public class HoroscopeAPIController {
      * @param sign
      * @return
      */
-    @GetMapping("/api/{sign}")
+    @GetMapping("sign/{sign}")
     private ResponseEntity<Horoscope> getToday(@PathVariable("sign") String sign) {
         return new ResponseEntity<>(getTodaysHoroscope(zodiacService.get(sign.toUpperCase())), HttpStatus.OK);
     }
@@ -77,7 +79,7 @@ public class HoroscopeAPIController {
      * @param day
      * @return
      */
-    @GetMapping("/api/month/{month}/day/{day}")
+    @GetMapping("month/{month}/day/{day}")
     private ResponseEntity<Horoscope> getToday(@PathVariable("month") Integer month, @PathVariable("day") Integer day) {
         return new ResponseEntity<>(getTodaysHoroscope(zodiacService.get(month, day)), HttpStatus.OK);
     }

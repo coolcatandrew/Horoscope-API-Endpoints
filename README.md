@@ -22,7 +22,7 @@ Currently only astrology.com source supported but more to come!
      * Get todays horoscope based on zodiac sign
      * Sign is a String (eg. leo, aquarius)
      */
-    @GetMapping("/api/{sign}")
+    @GetMapping("/api/sign/{sign}")
 
     /**
      * Get todays horoscope based on birthday

@@ -11,6 +11,8 @@ public class Horoscope {
     private Long id;
     @Column(name = "ZODIACID")
     private Integer zodiacId;
+    @Column(name = "ZODIACSIGN")
+    private String zodiacSign;
     @Column(name = "CONTENT")
     private String content;
     @Column(name = "CREATED")
@@ -21,20 +23,21 @@ public class Horoscope {
     public Horoscope() {
     }
 
-    public Horoscope(Integer zodiacId, String content) {
-        this(zodiacId, content, LocalDate.now(), "");
+    public Horoscope(Integer zodiacId, String zodiacSign, String content) {
+        this(zodiacId, zodiacSign, content, LocalDate.now(), "");
     }
 
-    public Horoscope(Integer zodiacId, String content, String source) {
-        this(zodiacId, content, LocalDate.now(), source);
+    public Horoscope(Integer zodiacId, String zodiacSign, String content, String source) {
+        this(zodiacId, zodiacSign, content, LocalDate.now(), source);
     }
 
-    public Horoscope(Integer zodiacId, String content, LocalDate created) {
-       this(zodiacId, content, created, "");
+    public Horoscope(Integer zodiacId, String zodiacSign, String content, LocalDate created) {
+       this(zodiacId, zodiacSign, content, created, "");
     }
 
-    public Horoscope(Integer zodiacId, String content, LocalDate created, String source) {
+    public Horoscope(Integer zodiacId, String zodiacSign, String content, LocalDate created, String source) {
         this.zodiacId = zodiacId;
+        this.zodiacSign = zodiacSign;
         this.content = content;
         this.created = created;
         this.source = source;

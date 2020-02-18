@@ -52,7 +52,7 @@ public class AstrologyDotComFeedParser implements FeedParser {
             if (zodiac == null) {
                 return null;
             }
-            horoscopes.add(new Horoscope(zodiac.getId(), content, HoroscopeSources.ASTROLOGY_DOT_COM.getSourceName()));
+            horoscopes.add(new Horoscope(zodiac.getId(), zodiac.getSign(), content, HoroscopeSources.ASTROLOGY_DOT_COM.getSourceName()));
         }
         return horoscopes.size() == 0 ? null : horoscopes;
     }

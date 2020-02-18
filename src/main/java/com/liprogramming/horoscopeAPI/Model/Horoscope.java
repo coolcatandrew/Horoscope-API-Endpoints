@@ -59,6 +59,14 @@ public class Horoscope {
         this.zodiacId = zodiacId;
     }
 
+    public String getZodiacSign() {
+        return zodiacSign;
+    }
+
+    public void setZodiacSign(String zodiacSign) {
+        this.zodiacSign = zodiacSign;
+    }
+
     public String getContent() {
         return content;
     }

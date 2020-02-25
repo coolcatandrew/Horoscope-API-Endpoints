@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface ZodiacDao extends JpaRepository<Zodiac, Integer> {
 
-    public Zodiac getZodiacBySign(String sign);
+    public List<Zodiac> getZodiacBySign(String sign);
 
     public List<Zodiac> getZodiacByStartMonthOrEndMonth(Integer firstMonth, Integer secondMonth);
 }

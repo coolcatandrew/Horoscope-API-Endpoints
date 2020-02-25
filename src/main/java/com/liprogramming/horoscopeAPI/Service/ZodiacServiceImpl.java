@@ -29,8 +29,9 @@ public class ZodiacServiceImpl implements ZodiacService {
 
     @Override
     public Zodiac get(String sign) {
+        List<Zodiac> zodiacs = zodiacRepository.getZodiacBySign(sign);
         //if there are more than one in list it is due to H2 error with api host implementation.
-        return zodiacRepository.getZodiacBySign(sign).get(0);
+        return zodiacs == null ? null : zodiacs.get(0);
     }
 
     @Override

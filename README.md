@@ -1,7 +1,7 @@
 # Horoscope-API-Endpoints
 Get daily horoscopes from rss feeds. 
 
-Used in Daily-Horoscope-API.
+Used in DailyHoroscope Library (https://github.com/coolcatandrew/DailyHoroscope).
 
 Currently only astrology.com source supported but more to come!
 
